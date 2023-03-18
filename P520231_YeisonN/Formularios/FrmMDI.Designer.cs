@@ -30,10 +30,6 @@
         {
             this.MnuPrincipal = new System.Windows.Forms.MenuStrip();
             this.MnuGestiones = new System.Windows.Forms.ToolStripMenuItem();
-            this.MnuProcesos = new System.Windows.Forms.ToolStripMenuItem();
-            this.MnuReport = new System.Windows.Forms.ToolStripMenuItem();
-            this.MnuExit = new System.Windows.Forms.ToolStripMenuItem();
-            this.MnuAcercade = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionDeUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionDeProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionDeProveedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -43,14 +39,18 @@
             this.tipoDeProveedorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tipoDeCompraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.MnuProcesos = new System.Windows.Forms.ToolStripMenuItem();
             this.registroDeComprasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.MnuReport = new System.Windows.Forms.ToolStripMenuItem();
             this.comprasPorFechaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.comprasPorProveedorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.comprasPorProductoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listadoDeInventarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reimpresionDeCompraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.MnuExit = new System.Windows.Forms.ToolStripMenuItem();
+            this.MnuAcercade = new System.Windows.Forms.ToolStripMenuItem();
             this.MnuPrincipal.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -90,53 +90,12 @@
             this.MnuGestiones.Size = new System.Drawing.Size(108, 25);
             this.MnuGestiones.Text = "GESTIONES";
             // 
-            // MnuProcesos
-            // 
-            this.MnuProcesos.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.registroDeComprasToolStripMenuItem,
-            this.toolStripSeparator4});
-            this.MnuProcesos.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MnuProcesos.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.MnuProcesos.Name = "MnuProcesos";
-            this.MnuProcesos.Size = new System.Drawing.Size(103, 25);
-            this.MnuProcesos.Text = "PROCESOS";
-            // 
-            // MnuReport
-            // 
-            this.MnuReport.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.comprasPorFechaToolStripMenuItem,
-            this.comprasPorProveedorToolStripMenuItem,
-            this.comprasPorProductoToolStripMenuItem,
-            this.listadoDeInventarioToolStripMenuItem,
-            this.reimpresionDeCompraToolStripMenuItem,
-            this.toolStripSeparator3});
-            this.MnuReport.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MnuReport.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.MnuReport.Name = "MnuReport";
-            this.MnuReport.Size = new System.Drawing.Size(100, 25);
-            this.MnuReport.Text = "REPORTES";
-            // 
-            // MnuExit
-            // 
-            this.MnuExit.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MnuExit.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.MnuExit.Name = "MnuExit";
-            this.MnuExit.Size = new System.Drawing.Size(65, 25);
-            this.MnuExit.Text = "SALIR";
-            // 
-            // MnuAcercade
-            // 
-            this.MnuAcercade.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MnuAcercade.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.MnuAcercade.Name = "MnuAcercade";
-            this.MnuAcercade.Size = new System.Drawing.Size(100, 25);
-            this.MnuAcercade.Text = "Acerca de ";
-            // 
             // gestionDeUsuariosToolStripMenuItem
             // 
             this.gestionDeUsuariosToolStripMenuItem.Name = "gestionDeUsuariosToolStripMenuItem";
             this.gestionDeUsuariosToolStripMenuItem.Size = new System.Drawing.Size(269, 26);
             this.gestionDeUsuariosToolStripMenuItem.Text = "Gestion de Usuarios";
+            this.gestionDeUsuariosToolStripMenuItem.Click += new System.EventHandler(this.gestionDeUsuariosToolStripMenuItem_Click);
             // 
             // gestionDeProductosToolStripMenuItem
             // 
@@ -184,11 +143,42 @@
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             this.toolStripSeparator2.Size = new System.Drawing.Size(266, 6);
             // 
+            // MnuProcesos
+            // 
+            this.MnuProcesos.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.registroDeComprasToolStripMenuItem,
+            this.toolStripSeparator4});
+            this.MnuProcesos.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MnuProcesos.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.MnuProcesos.Name = "MnuProcesos";
+            this.MnuProcesos.Size = new System.Drawing.Size(103, 25);
+            this.MnuProcesos.Text = "PROCESOS";
+            // 
             // registroDeComprasToolStripMenuItem
             // 
             this.registroDeComprasToolStripMenuItem.Name = "registroDeComprasToolStripMenuItem";
             this.registroDeComprasToolStripMenuItem.Size = new System.Drawing.Size(241, 26);
             this.registroDeComprasToolStripMenuItem.Text = "Registro de Compras ";
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(238, 6);
+            // 
+            // MnuReport
+            // 
+            this.MnuReport.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.comprasPorFechaToolStripMenuItem,
+            this.comprasPorProveedorToolStripMenuItem,
+            this.comprasPorProductoToolStripMenuItem,
+            this.listadoDeInventarioToolStripMenuItem,
+            this.reimpresionDeCompraToolStripMenuItem,
+            this.toolStripSeparator3});
+            this.MnuReport.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MnuReport.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.MnuReport.Name = "MnuReport";
+            this.MnuReport.Size = new System.Drawing.Size(100, 25);
+            this.MnuReport.Text = "REPORTES";
             // 
             // comprasPorFechaToolStripMenuItem
             // 
@@ -225,10 +215,21 @@
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             this.toolStripSeparator3.Size = new System.Drawing.Size(268, 6);
             // 
-            // toolStripSeparator4
+            // MnuExit
             // 
-            this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(238, 6);
+            this.MnuExit.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MnuExit.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.MnuExit.Name = "MnuExit";
+            this.MnuExit.Size = new System.Drawing.Size(65, 25);
+            this.MnuExit.Text = "SALIR";
+            // 
+            // MnuAcercade
+            // 
+            this.MnuAcercade.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MnuAcercade.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.MnuAcercade.Name = "MnuAcercade";
+            this.MnuAcercade.Size = new System.Drawing.Size(100, 25);
+            this.MnuAcercade.Text = "Acerca de ";
             // 
             // FrmMDI
             // 

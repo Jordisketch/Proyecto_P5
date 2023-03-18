@@ -7,7 +7,8 @@ namespace P520231_YeisonN
         //Estas propiedades al pertenecer a una clase de auto instancia 
         //y se puede obtener acceso a ellas en la globalidad de la aplicacion.
         public static Form MiFormPrincipal = new Formularios.FrmMDI();
-
+        
+        public static Formularios.FrmUsuariosGestion MiFormGestionUsuarios = new Formularios.FrmUsuariosGestion();
 
     }
 }
