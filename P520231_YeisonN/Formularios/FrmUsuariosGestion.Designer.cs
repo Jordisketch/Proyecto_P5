@@ -33,27 +33,33 @@
             this.CboxVerActivos = new System.Windows.Forms.CheckBox();
             this.DgLista = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.TxtUsuarioID = new System.Windows.Forms.TextBox();
-            this.TxtUsuarioNombre = new System.Windows.Forms.TextBox();
-            this.TxtUsuarioCedula = new System.Windows.Forms.TextBox();
-            this.TxtUsuarioTelefono = new System.Windows.Forms.TextBox();
-            this.TxtUsuarioCorreo = new System.Windows.Forms.TextBox();
-            this.TxtUsuarioContrasenia = new System.Windows.Forms.TextBox();
-            this.CbRolesUsuario = new System.Windows.Forms.ComboBox();
             this.TxtUsuarioDireccion = new System.Windows.Forms.TextBox();
+            this.CbRolesUsuario = new System.Windows.Forms.ComboBox();
+            this.TxtUsuarioContrasenia = new System.Windows.Forms.TextBox();
+            this.TxtUsuarioCorreo = new System.Windows.Forms.TextBox();
+            this.TxtUsuarioTelefono = new System.Windows.Forms.TextBox();
+            this.TxtUsuarioCedula = new System.Windows.Forms.TextBox();
+            this.TxtUsuarioNombre = new System.Windows.Forms.TextBox();
+            this.TxtUsuarioID = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.BtnAgregar = new System.Windows.Forms.Button();
             this.BtnModificar = new System.Windows.Forms.Button();
             this.BtnEliminar = new System.Windows.Forms.Button();
             this.BtnLimpiar = new System.Windows.Forms.Button();
             this.BtnCancelar = new System.Windows.Forms.Button();
+            this.CUsuarioID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CUsuarioNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CUsuarioCedula = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CUsuarioCorreo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CUsuarioTelefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CUsuarioRolDescripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DgLista)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -96,15 +102,24 @@
             this.DgLista.AllowUserToDeleteRows = false;
             this.DgLista.AllowUserToOrderColumns = true;
             this.DgLista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgLista.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.CUsuarioID,
+            this.CUsuarioNombre,
+            this.CUsuarioCedula,
+            this.CUsuarioCorreo,
+            this.CUsuarioTelefono,
+            this.CUsuarioRolDescripcion});
             this.DgLista.Location = new System.Drawing.Point(14, 104);
             this.DgLista.MultiSelect = false;
             this.DgLista.Name = "DgLista";
             this.DgLista.ReadOnly = true;
             this.DgLista.RowHeadersVisible = false;
             this.DgLista.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DgLista.Size = new System.Drawing.Size(634, 195);
+            this.DgLista.Size = new System.Drawing.Size(853, 195);
             this.DgLista.TabIndex = 3;
             this.DgLista.VirtualMode = true;
+            this.DgLista.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgLista_CellClick);
+            this.DgLista.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.DgLista_DataBindingComplete);
             // 
             // groupBox1
             // 
@@ -126,73 +141,73 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(14, 305);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(634, 301);
+            this.groupBox1.Size = new System.Drawing.Size(853, 301);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Detalle de Usuario ";
             // 
-            // label2
+            // TxtUsuarioDireccion
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(21, 31);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(122, 20);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Codigo Usuario:";
+            this.TxtUsuarioDireccion.Location = new System.Drawing.Point(106, 238);
+            this.TxtUsuarioDireccion.Multiline = true;
+            this.TxtUsuarioDireccion.Name = "TxtUsuarioDireccion";
+            this.TxtUsuarioDireccion.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.TxtUsuarioDireccion.Size = new System.Drawing.Size(741, 57);
+            this.TxtUsuarioDireccion.TabIndex = 15;
             // 
-            // label3
+            // CbRolesUsuario
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(21, 60);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(69, 20);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Nombre:";
+            this.CbRolesUsuario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CbRolesUsuario.FormattingEnabled = true;
+            this.CbRolesUsuario.Location = new System.Drawing.Point(145, 207);
+            this.CbRolesUsuario.Name = "CbRolesUsuario";
+            this.CbRolesUsuario.Size = new System.Drawing.Size(702, 28);
+            this.CbRolesUsuario.TabIndex = 14;
             // 
-            // label4
+            // TxtUsuarioContrasenia
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(21, 89);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(63, 20);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Cedula:";
+            this.TxtUsuarioContrasenia.Location = new System.Drawing.Point(118, 177);
+            this.TxtUsuarioContrasenia.Name = "TxtUsuarioContrasenia";
+            this.TxtUsuarioContrasenia.Size = new System.Drawing.Size(729, 26);
+            this.TxtUsuarioContrasenia.TabIndex = 13;
+            this.TxtUsuarioContrasenia.UseSystemPasswordChar = true;
             // 
-            // label5
+            // TxtUsuarioCorreo
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(21, 118);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(75, 20);
-            this.label5.TabIndex = 3;
-            this.label5.Text = "Telefono:";
+            this.TxtUsuarioCorreo.Location = new System.Drawing.Point(79, 148);
+            this.TxtUsuarioCorreo.Name = "TxtUsuarioCorreo";
+            this.TxtUsuarioCorreo.Size = new System.Drawing.Size(768, 26);
+            this.TxtUsuarioCorreo.TabIndex = 12;
             // 
-            // label6
+            // TxtUsuarioTelefono
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(21, 148);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(52, 20);
-            this.label6.TabIndex = 4;
-            this.label6.Text = "Email:";
+            this.TxtUsuarioTelefono.Location = new System.Drawing.Point(102, 118);
+            this.TxtUsuarioTelefono.Name = "TxtUsuarioTelefono";
+            this.TxtUsuarioTelefono.Size = new System.Drawing.Size(745, 26);
+            this.TxtUsuarioTelefono.TabIndex = 11;
             // 
-            // label7
+            // TxtUsuarioCedula
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(21, 177);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(91, 20);
-            this.label7.TabIndex = 5;
-            this.label7.Text = "Contaseña:";
+            this.TxtUsuarioCedula.Location = new System.Drawing.Point(87, 89);
+            this.TxtUsuarioCedula.Name = "TxtUsuarioCedula";
+            this.TxtUsuarioCedula.Size = new System.Drawing.Size(760, 26);
+            this.TxtUsuarioCedula.TabIndex = 10;
             // 
-            // label8
+            // TxtUsuarioNombre
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(21, 207);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(118, 20);
-            this.label8.TabIndex = 6;
-            this.label8.Text = "Rol de Usuario:";
+            this.TxtUsuarioNombre.Location = new System.Drawing.Point(96, 60);
+            this.TxtUsuarioNombre.Name = "TxtUsuarioNombre";
+            this.TxtUsuarioNombre.Size = new System.Drawing.Size(751, 26);
+            this.TxtUsuarioNombre.TabIndex = 9;
+            // 
+            // TxtUsuarioID
+            // 
+            this.TxtUsuarioID.Location = new System.Drawing.Point(149, 28);
+            this.TxtUsuarioID.Name = "TxtUsuarioID";
+            this.TxtUsuarioID.ReadOnly = true;
+            this.TxtUsuarioID.Size = new System.Drawing.Size(698, 26);
+            this.TxtUsuarioID.TabIndex = 8;
+            this.TxtUsuarioID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label9
             // 
@@ -203,68 +218,68 @@
             this.label9.TabIndex = 7;
             this.label9.Text = "Direccion:";
             // 
-            // TxtUsuarioID
+            // label8
             // 
-            this.TxtUsuarioID.Location = new System.Drawing.Point(149, 28);
-            this.TxtUsuarioID.Name = "TxtUsuarioID";
-            this.TxtUsuarioID.ReadOnly = true;
-            this.TxtUsuarioID.Size = new System.Drawing.Size(479, 26);
-            this.TxtUsuarioID.TabIndex = 8;
-            this.TxtUsuarioID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(21, 207);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(118, 20);
+            this.label8.TabIndex = 6;
+            this.label8.Text = "Rol de Usuario:";
             // 
-            // TxtUsuarioNombre
+            // label7
             // 
-            this.TxtUsuarioNombre.Location = new System.Drawing.Point(96, 60);
-            this.TxtUsuarioNombre.Name = "TxtUsuarioNombre";
-            this.TxtUsuarioNombre.Size = new System.Drawing.Size(532, 26);
-            this.TxtUsuarioNombre.TabIndex = 9;
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(21, 177);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(91, 20);
+            this.label7.TabIndex = 5;
+            this.label7.Text = "Contaseña:";
             // 
-            // TxtUsuarioCedula
+            // label6
             // 
-            this.TxtUsuarioCedula.Location = new System.Drawing.Point(87, 89);
-            this.TxtUsuarioCedula.Name = "TxtUsuarioCedula";
-            this.TxtUsuarioCedula.Size = new System.Drawing.Size(541, 26);
-            this.TxtUsuarioCedula.TabIndex = 10;
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(21, 148);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(52, 20);
+            this.label6.TabIndex = 4;
+            this.label6.Text = "Email:";
             // 
-            // TxtUsuarioTelefono
+            // label5
             // 
-            this.TxtUsuarioTelefono.Location = new System.Drawing.Point(102, 118);
-            this.TxtUsuarioTelefono.Name = "TxtUsuarioTelefono";
-            this.TxtUsuarioTelefono.Size = new System.Drawing.Size(526, 26);
-            this.TxtUsuarioTelefono.TabIndex = 11;
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(21, 118);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(75, 20);
+            this.label5.TabIndex = 3;
+            this.label5.Text = "Telefono:";
             // 
-            // TxtUsuarioCorreo
+            // label4
             // 
-            this.TxtUsuarioCorreo.Location = new System.Drawing.Point(79, 148);
-            this.TxtUsuarioCorreo.Name = "TxtUsuarioCorreo";
-            this.TxtUsuarioCorreo.Size = new System.Drawing.Size(549, 26);
-            this.TxtUsuarioCorreo.TabIndex = 12;
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(21, 89);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(63, 20);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "Cedula:";
             // 
-            // TxtUsuarioContrasenia
+            // label3
             // 
-            this.TxtUsuarioContrasenia.Location = new System.Drawing.Point(118, 177);
-            this.TxtUsuarioContrasenia.Name = "TxtUsuarioContrasenia";
-            this.TxtUsuarioContrasenia.Size = new System.Drawing.Size(510, 26);
-            this.TxtUsuarioContrasenia.TabIndex = 13;
-            this.TxtUsuarioContrasenia.UseSystemPasswordChar = true;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(21, 60);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(69, 20);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Nombre:";
             // 
-            // CbRolesUsuario
+            // label2
             // 
-            this.CbRolesUsuario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CbRolesUsuario.FormattingEnabled = true;
-            this.CbRolesUsuario.Location = new System.Drawing.Point(145, 207);
-            this.CbRolesUsuario.Name = "CbRolesUsuario";
-            this.CbRolesUsuario.Size = new System.Drawing.Size(483, 28);
-            this.CbRolesUsuario.TabIndex = 14;
-            // 
-            // TxtUsuarioDireccion
-            // 
-            this.TxtUsuarioDireccion.Location = new System.Drawing.Point(106, 238);
-            this.TxtUsuarioDireccion.Multiline = true;
-            this.TxtUsuarioDireccion.Name = "TxtUsuarioDireccion";
-            this.TxtUsuarioDireccion.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.TxtUsuarioDireccion.Size = new System.Drawing.Size(522, 57);
-            this.TxtUsuarioDireccion.TabIndex = 15;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(21, 31);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(122, 20);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Codigo Usuario:";
             // 
             // BtnAgregar
             // 
@@ -285,7 +300,7 @@
             this.BtnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnModificar.ForeColor = System.Drawing.Color.White;
-            this.BtnModificar.Location = new System.Drawing.Point(142, 612);
+            this.BtnModificar.Location = new System.Drawing.Point(203, 612);
             this.BtnModificar.Name = "BtnModificar";
             this.BtnModificar.Size = new System.Drawing.Size(122, 28);
             this.BtnModificar.TabIndex = 6;
@@ -298,7 +313,7 @@
             this.BtnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnEliminar.ForeColor = System.Drawing.Color.White;
-            this.BtnEliminar.Location = new System.Drawing.Point(270, 612);
+            this.BtnEliminar.Location = new System.Drawing.Point(390, 612);
             this.BtnEliminar.Name = "BtnEliminar";
             this.BtnEliminar.Size = new System.Drawing.Size(122, 28);
             this.BtnEliminar.TabIndex = 7;
@@ -311,7 +326,7 @@
             this.BtnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnLimpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnLimpiar.ForeColor = System.Drawing.Color.White;
-            this.BtnLimpiar.Location = new System.Drawing.Point(398, 612);
+            this.BtnLimpiar.Location = new System.Drawing.Point(567, 612);
             this.BtnLimpiar.Name = "BtnLimpiar";
             this.BtnLimpiar.Size = new System.Drawing.Size(122, 28);
             this.BtnLimpiar.TabIndex = 8;
@@ -324,18 +339,69 @@
             this.BtnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnCancelar.ForeColor = System.Drawing.Color.White;
-            this.BtnCancelar.Location = new System.Drawing.Point(526, 612);
+            this.BtnCancelar.Location = new System.Drawing.Point(739, 612);
             this.BtnCancelar.Name = "BtnCancelar";
             this.BtnCancelar.Size = new System.Drawing.Size(122, 28);
             this.BtnCancelar.TabIndex = 9;
             this.BtnCancelar.Text = "CANCELAR";
             this.BtnCancelar.UseVisualStyleBackColor = false;
             // 
+            // CUsuarioID
+            // 
+            this.CUsuarioID.DataPropertyName = "UsuarioID";
+            this.CUsuarioID.HeaderText = "Cod. Usuario";
+            this.CUsuarioID.Name = "CUsuarioID";
+            this.CUsuarioID.ReadOnly = true;
+            // 
+            // CUsuarioNombre
+            // 
+            this.CUsuarioNombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.CUsuarioNombre.DataPropertyName = "UsuarioNombre";
+            this.CUsuarioNombre.HeaderText = "Nombre ";
+            this.CUsuarioNombre.Name = "CUsuarioNombre";
+            this.CUsuarioNombre.ReadOnly = true;
+            // 
+            // CUsuarioCedula
+            // 
+            this.CUsuarioCedula.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.CUsuarioCedula.DataPropertyName = "UsuarioCedula";
+            this.CUsuarioCedula.HeaderText = "Cedula";
+            this.CUsuarioCedula.Name = "CUsuarioCedula";
+            this.CUsuarioCedula.ReadOnly = true;
+            this.CUsuarioCedula.Width = 120;
+            // 
+            // CUsuarioCorreo
+            // 
+            this.CUsuarioCorreo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.CUsuarioCorreo.DataPropertyName = "UsuarioCorreo";
+            this.CUsuarioCorreo.HeaderText = "Correo";
+            this.CUsuarioCorreo.Name = "CUsuarioCorreo";
+            this.CUsuarioCorreo.ReadOnly = true;
+            this.CUsuarioCorreo.Width = 180;
+            // 
+            // CUsuarioTelefono
+            // 
+            this.CUsuarioTelefono.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.CUsuarioTelefono.DataPropertyName = "UsuarioTelefono";
+            this.CUsuarioTelefono.HeaderText = "Telefono";
+            this.CUsuarioTelefono.Name = "CUsuarioTelefono";
+            this.CUsuarioTelefono.ReadOnly = true;
+            this.CUsuarioTelefono.Width = 120;
+            // 
+            // CUsuarioRolDescripcion
+            // 
+            this.CUsuarioRolDescripcion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.CUsuarioRolDescripcion.DataPropertyName = "UsuarioRolDescripcion";
+            this.CUsuarioRolDescripcion.HeaderText = "Rol";
+            this.CUsuarioRolDescripcion.Name = "CUsuarioRolDescripcion";
+            this.CUsuarioRolDescripcion.ReadOnly = true;
+            this.CUsuarioRolDescripcion.Width = 130;
+            // 
             // FrmUsuariosGestion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(657, 652);
+            this.ClientSize = new System.Drawing.Size(879, 652);
             this.Controls.Add(this.BtnCancelar);
             this.Controls.Add(this.BtnLimpiar);
             this.Controls.Add(this.BtnEliminar);
@@ -389,5 +455,11 @@
         private System.Windows.Forms.Button BtnEliminar;
         private System.Windows.Forms.Button BtnLimpiar;
         private System.Windows.Forms.Button BtnCancelar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CUsuarioID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CUsuarioNombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CUsuarioCedula;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CUsuarioCorreo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CUsuarioTelefono;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CUsuarioRolDescripcion;
     }
 }
