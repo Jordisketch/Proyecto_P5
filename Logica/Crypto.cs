@@ -5,7 +5,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace P520231_YeisonN
+namespace Logica
 {
     public class Crypto
     {
@@ -87,10 +87,5 @@ namespace P520231_YeisonN
             return Resultado.ToString();
 
         }
-
-
-
-
-
     }
 }

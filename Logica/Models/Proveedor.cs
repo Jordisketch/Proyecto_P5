@@ -1,6 +1,8 @@
-﻿using System;
+﻿using Logica.Services;
+using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,7 +20,7 @@ namespace Logica.Models
         public string ProveedorNotas { get; set; }
         public bool Activo { get; set; }
 
-        TipoProveedor MiTipoProveedor { get; set; }
+        public TipoProveedor MiTipoProveedor { get; set; }
 
         public Proveedor()
         {
@@ -29,7 +31,23 @@ namespace Logica.Models
         public bool Agregar()
         {
             bool R = false;
+            Conexion MiCnn = new Conexion();
 
+            MiCnn.ListaDeParametros.Add(new SqlParameter("@NombreProveedor", this.ProveedorNombre));
+            MiCnn.ListaDeParametros.Add(new SqlParameter("@CedulaProveedor", this.ProveedorCedula));
+            MiCnn.ListaDeParametros.Add(new SqlParameter("@CorreoProvedor", this.ProveedorEmail));
+            MiCnn.ListaDeParametros.Add(new SqlParameter("@Direccionproveedor", this.ProveedorDireccion));
+            MiCnn.ListaDeParametros.Add(new SqlParameter("@NotaProveedor", this.ProveedorNotas));
+            MiCnn.ListaDeParametros.Add(new SqlParameter("@ProveedorTipoID", this.MiTipoProveedor.ProveedorTipo));
+
+            
+            int resultado = MiCnn.EjecutarInsertUpdateDelete("SPProveedorAgregar");
+
+           
+            if (resultado > 0)
+            {
+                R = true;
+            }
             return R;
         }
 
@@ -68,21 +86,22 @@ namespace Logica.Models
             return R;
         }
 
-        public DataTable Listar(bool verActivos)
+        public DataTable Listar(bool verActivos = true, string FiltroBusqueda = "")
         {
-            verActivos = true;
             DataTable R = new DataTable();
+
+            Conexion MiCnn = new Conexion();
+            MiCnn.ListaDeParametros.Add(new SqlParameter("@VerActivos", verActivos));
+            MiCnn.ListaDeParametros.Add(new SqlParameter("@FiltroBusqueda", FiltroBusqueda));
+
+            R = MiCnn.EjecutarSELECT("SPProveedorListar");
 
             return R;
         }
 
 
 
-
-
-
-
-
+        
 
 
 

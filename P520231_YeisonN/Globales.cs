@@ -10,5 +10,12 @@ namespace P520231_YeisonN
         
         public static Formularios.FrmUsuariosGestion MiFormGestionUsuarios = new Formularios.FrmUsuariosGestion();
 
+        //DEBEMOS TENER COMO OBJETO DE TIPO USUARIO QUE PERMITA ALMACENAR LOS DATOS DEL USUARIO QUE SE HAYA LOGUEADO CORRECTAMENTE
+        public static Logica.Models.Usuario MiUsuarioGlobal = new Logica.Models.Usuario();
+
+        public static Formularios.FrmRegistroCompra MiFormRegistroCompra = new Formularios.FrmRegistroCompra();
+
+        public static Formularios.FrmGestionProveedores MiGestionProveedores = new Formularios.FrmGestionProveedores();
+
     }
 }
