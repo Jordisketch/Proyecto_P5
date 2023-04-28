@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,46 +13,56 @@ namespace Logica.Models
     {
         public int ProductoID { get; set; }
         public string ProductoNombre { get; set; }
-        public string ProductoCodigoBarras { get; set; }
-        public decimal CantidadStock { get; set; }
-        public decimal CostoUnitario { get; set; }
-        public decimal PrecioVentaUnitario { get; set; }
-        public bool Activo { get; set; }
+        public string CantidadStock { get; set; }
+   
 
         public bool Agregar()
         {
-            throw new System.Exception("Not implemented");
+            bool result = false;
+            Conexion miConexion = new Conexion();
+
+            miConexion.ListaDeParametros.Add(new SqlParameter("@ProductoNombre", this.ProductoNombre));
+            miConexion.ListaDeParametros.Add(new SqlParameter("@cantidadStock", this.CantidadStock));
+            miConexion.ListaDeParametros.Add(new SqlParameter("@CategoriaProductoID", this.Micategoria.CategoriaID));
+
+            int rowsAffected = miConexion.EjecutarInsertUpdateDelete("GuardarProducto");
+            if (rowsAffected > 0)
+            {
+                result = true;
+            }
+
+            return result;
         }
+
         public bool Editar()
         {
             throw new System.Exception("Not implemented");
         }
         public bool Eliminar()
         {
-            throw new System.Exception("Not implemented");
-        }
-        public bool ConsultarPorCodigoDeBarras(ref string codigoBarras)
-        {
-            throw new System.Exception("Not implemented");
-        }
-        public DataTable ListarActivos()
-        {
-            throw new System.Exception("Not implemented");
-        }
-        public DataTable ListarInactivos()
-        {
-            throw new System.Exception("Not implemented");
+            bool R = false;
+            Conexion MiCnn = new Conexion();
+
+            MiCnn.ListaDeParametros.Add(new SqlParameter("@productoID", this.ProductoID));
+
+            int resultado = MiCnn.EjecutarInsertUpdateDelete("EliminarProducto");
+
+            if (resultado > 0)
+            {
+                R = true;
+            }
+
+            return R;
         }
 
-        //nueva funcion para mostrar la lista de items en la ventana de busqueda de productos 
 
-        public DataTable ListarEnBusqueda()
+        public DataTable Listar()
         {
             DataTable R = new DataTable();
 
             Conexion MiCnn = new Conexion();
 
-            R = MiCnn.EjecutarSELECT("SPProductoBusquedaListar");
+            R = MiCnn.EjecutarSELECT("SPListarProductos");
 
             return R;
 

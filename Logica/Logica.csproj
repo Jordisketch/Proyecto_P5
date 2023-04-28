@@ -48,6 +48,7 @@
     <Compile Include="Models\CompraDetalle.cs" />
     <Compile Include="Models\Producto.cs" />
     <Compile Include="Models\Proveedor.cs" />
+    <Compile Include="Models\Sede.cs" />
     <Compile Include="Models\TipoCompre.cs" />
     <Compile Include="Models\TipoProveedor.cs" />
     <Compile Include="Models\Usuario.cs" />
