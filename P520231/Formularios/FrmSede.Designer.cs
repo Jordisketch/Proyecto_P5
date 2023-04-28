@@ -111,6 +111,7 @@
             this.button2.TabIndex = 7;
             this.button2.Text = "Limpiar";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.Limpiar_Formulario);
             // 
             // dataGridView1
             // 

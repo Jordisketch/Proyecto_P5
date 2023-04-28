@@ -51,6 +51,7 @@ namespace P520231.Formularios
                 if (sede.Agregar())
                 {
                     MessageBox.Show("Sede guardada correctamente.");
+                    cargarSedes();
 
                 }
                 else
@@ -66,8 +67,12 @@ namespace P520231.Formularios
                     MessageBox.Show("Debe llenar el formulario");
                 }
                
-
-
+        }
+        private void Limpiar_Formulario(object sender, EventArgs e)
+        {
+           TxtDescripcionSede.Clear();
+            TxtSedeNombre.Clear();
+            TxtUbicacionSede.Clear();
         }
 
     }
