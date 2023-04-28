@@ -119,25 +119,28 @@
             this.ProductoNombre,
             this.CantidadStock,
             this.CategoriaID});
-            this.dataGridView1.Location = new System.Drawing.Point(43, 248);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 80);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1157, 334);
+            this.dataGridView1.Size = new System.Drawing.Size(1253, 578);
             this.dataGridView1.TabIndex = 10;
             // 
             // ProductoNombre
             // 
+            this.ProductoNombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.ProductoNombre.DataPropertyName = "ProductoNombre";
             this.ProductoNombre.HeaderText = "Nombre";
             this.ProductoNombre.Name = "ProductoNombre";
             // 
             // CantidadStock
             // 
+            this.CantidadStock.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.CantidadStock.DataPropertyName = "CantidadStock";
             this.CantidadStock.HeaderText = "Cantidad";
             this.CantidadStock.Name = "CantidadStock";
             // 
             // CategoriaID
             // 
+            this.CategoriaID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.CategoriaID.DataPropertyName = "CategoriaID";
             this.CategoriaID.HeaderText = "Categoria";
             this.CategoriaID.Name = "CategoriaID";

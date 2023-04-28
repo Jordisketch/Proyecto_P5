@@ -11,7 +11,6 @@ namespace P520231
 
         public static Logica.Models.Usuario MiUsuarioGlobal = new Logica.Models.Usuario();
 
-        public static Formularios.FrmRegistroCompra MiFormRegistroCompra = new Formularios.FrmRegistroCompra();
 
         public static Formularios.FrmGestionProveedores MiGestionProveedores = new Formularios.FrmGestionProveedores();
 

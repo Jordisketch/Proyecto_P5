@@ -58,12 +58,6 @@
     <Compile Include="Formularios\FrmSede.Designer.cs">
       <DependentUpon>FrmSede.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\FrmCompraAgregarProducto.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\FrmCompraAgregarProducto.Designer.cs">
-      <DependentUpon>FrmCompraAgregarProducto.cs</DependentUpon>
-    </Compile>
     <Compile Include="Formularios\FrmGestionProveedores.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,18 +76,6 @@
     <Compile Include="Formularios\FrmMDI.Designer.cs">
       <DependentUpon>FrmMDI.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\FrmProveedorBuscar.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\FrmProveedorBuscar.Designer.cs">
-      <DependentUpon>FrmProveedorBuscar.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\FrmRegistroCompra.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\FrmRegistroCompra.Designer.cs">
-      <DependentUpon>FrmRegistroCompra.cs</DependentUpon>
-    </Compile>
     <Compile Include="Formularios\FrmUsuariosGestion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,9 +86,6 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Validaciones.cs" />
-    <EmbeddedResource Include="Formularios\FrmCompraAgregarProducto.resx">
-      <DependentUpon>FrmCompraAgregarProducto.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmGestionProveedores.resx">
       <DependentUpon>FrmGestionProveedores.cs</DependentUpon>
     </EmbeddedResource>
@@ -118,12 +97,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmProducto.resx">
       <DependentUpon>FrmProducto.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\FrmProveedorBuscar.resx">
-      <DependentUpon>FrmProveedorBuscar.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\FrmRegistroCompra.resx">
-      <DependentUpon>FrmRegistroCompra.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmSede.resx">
       <DependentUpon>FrmSede.cs</DependentUpon>

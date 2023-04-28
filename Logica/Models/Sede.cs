@@ -36,33 +36,6 @@ namespace Logica.Models
             return R;
         }
 
-        public bool Editar()
-        {
-            bool R = false;
-
-            // Aquí va el código para editar una Sede
-            // ...
-            return R;
-        }
-
-        public bool Eliminar()
-        {
-            bool R = false;
-
-            // Aquí va el código para eliminar una Sede
-            // ...
-            return R;
-        }
-
-        public Sede ConsultarPorId(int id)
-        {
-            Sede R = new Sede();
-
-            // Aquí va el código para consultar una Sede por su id
-            // ...
-            return R;
-        }
-
         public DataTable Listar()
         {
             DataTable R = new DataTable();
