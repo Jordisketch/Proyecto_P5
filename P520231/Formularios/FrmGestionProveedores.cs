@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Logica.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -25,10 +26,34 @@ namespace P520231.Formularios
 
         private void FrmGestionProveedores_Load(object sender, EventArgs e)
         {
-            MdiParent = Globales.MiFormPrincipal; 
+            cargarRoles();
+            cargarProveedores();
             
         }
 
+        private void cargarProveedores()
+        {
+
+            DgLista.DataSource = MiProveedor.Listar();
+
+        }
+        private void cargarRoles()
+        {
+
+            Logica.Models.TipoProveedor tipoProveedor = new Logica.Models.TipoProveedor();
+
+            DataTable dt = new DataTable();
+            dt = tipoProveedor.listar();
+
+            if (dt != null && dt.Rows.Count > 0)
+            {
+                CbRolProveedor.ValueMember = "ProveedorTipoID";
+                CbRolProveedor.DisplayMember = "ProveedorTipoDescripcion";
+                CbRolProveedor.DataSource = dt;
+                CbRolProveedor.SelectedIndex = -1;
+            }
+
+        }
 
         private void BtnLimpiar_Click(object sender, EventArgs e)
         {
@@ -55,6 +80,28 @@ namespace P520231.Formularios
             MiProveedor.ProveedorDireccion = TxtDireccionProveedor.Text.Trim();
             MiProveedor.ProveedorNotas = TxtNotas.Text.Trim();
             MiProveedor.MiTipoProveedor.ProveedorTipo = Convert.ToInt32(CbRolProveedor.SelectedValue);
+
+            if (!string.IsNullOrEmpty(MiProveedor.ProveedorNombre) && !string.IsNullOrEmpty(MiProveedor.ProveedorCedula) && !string.IsNullOrEmpty(MiProveedor.ProveedorEmail)
+                && !string.IsNullOrEmpty(MiProveedor.ProveedorDireccion)  && !string.IsNullOrEmpty(MiProveedor.ProveedorNotas) && MiProveedor.MiTipoProveedor.ProveedorTipo > 0)
+            {
+                if (MiProveedor.Agregar())
+                {
+                    MessageBox.Show("Proveedor guardado correctamente.");
+                    cargarProveedores();
+
+                }
+                else
+                {
+                    MessageBox.Show("Error al guardar el proveedor, intente de nuevo.");
+
+                }
+
+
+            }
+            else
+            {
+                MessageBox.Show("Debe llenar el formulario");
+            }
         }
     }
 }

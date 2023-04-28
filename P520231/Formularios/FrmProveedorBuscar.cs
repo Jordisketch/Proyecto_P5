@@ -34,7 +34,7 @@ namespace P520231.Formularios
         private void LlenarLista()
         {
             DtLista = new DataTable();
-            DtLista = MiProveedorLocal.Listar(true, TxtBusar.Text.Trim());
+            DtLista = MiProveedorLocal.Listar();
 
             DgvLista.DataSource = DtLista;  
         }

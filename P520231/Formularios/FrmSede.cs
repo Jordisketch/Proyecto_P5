@@ -43,7 +43,6 @@ namespace P520231.Formularios
                 sede.nombre = TxtSedeNombre.Text.Trim();
                 sede.ubicacion = TxtUbicacionSede.Text.Trim();
 
-                //paso 1.5
 
                 if (!string.IsNullOrEmpty(sede.descripcion) &&!string.IsNullOrEmpty(sede.nombre) && !string.IsNullOrEmpty(sede.ubicacion))
                 {

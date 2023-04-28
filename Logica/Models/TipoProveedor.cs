@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Logica.Services;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -14,7 +15,10 @@ namespace Logica.Models
 
         public DataTable listar()
         {
+            Conexion MiCnn = new Conexion();
+
             DataTable R = new DataTable();
+            R = MiCnn.EjecutarSELECT("SPTipoProveedorListar");
 
             return R;
         }

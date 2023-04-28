@@ -46,6 +46,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.BtnAgregarProveedor = new System.Windows.Forms.Button();
             this.BtnLimpiar = new System.Windows.Forms.Button();
+            this.ProveedorNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProveedorCedula = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProveedorEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProveedorDireccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DgLista)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -56,6 +60,11 @@
             this.DgLista.AllowUserToDeleteRows = false;
             this.DgLista.AllowUserToOrderColumns = true;
             this.DgLista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgLista.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ProveedorNombre,
+            this.ProveedorCedula,
+            this.ProveedorEmail,
+            this.ProveedorDireccion});
             this.DgLista.Location = new System.Drawing.Point(12, 12);
             this.DgLista.MultiSelect = false;
             this.DgLista.Name = "DgLista";
@@ -245,6 +254,34 @@
             this.BtnLimpiar.UseVisualStyleBackColor = false;
             this.BtnLimpiar.Click += new System.EventHandler(this.BtnLimpiar_Click);
             // 
+            // ProveedorNombre
+            // 
+            this.ProveedorNombre.DataPropertyName = "ProveedorNombre";
+            this.ProveedorNombre.HeaderText = "Nombre";
+            this.ProveedorNombre.Name = "ProveedorNombre";
+            this.ProveedorNombre.ReadOnly = true;
+            // 
+            // ProveedorCedula
+            // 
+            this.ProveedorCedula.DataPropertyName = "ProveedorCedula";
+            this.ProveedorCedula.HeaderText = "Cedula";
+            this.ProveedorCedula.Name = "ProveedorCedula";
+            this.ProveedorCedula.ReadOnly = true;
+            // 
+            // ProveedorEmail
+            // 
+            this.ProveedorEmail.DataPropertyName = "ProveedorEmail";
+            this.ProveedorEmail.HeaderText = "Email";
+            this.ProveedorEmail.Name = "ProveedorEmail";
+            this.ProveedorEmail.ReadOnly = true;
+            // 
+            // ProveedorDireccion
+            // 
+            this.ProveedorDireccion.DataPropertyName = "ProveedorEmail";
+            this.ProveedorDireccion.HeaderText = "Direccion";
+            this.ProveedorDireccion.Name = "ProveedorDireccion";
+            this.ProveedorDireccion.ReadOnly = true;
+            // 
             // FrmGestionProveedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -285,5 +322,9 @@
         private System.Windows.Forms.ComboBox CbRolProveedor;
         private System.Windows.Forms.Button BtnAgregarProveedor;
         private System.Windows.Forms.Button BtnLimpiar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ProveedorNombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ProveedorCedula;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ProveedorEmail;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ProveedorDireccion;
     }
 }
